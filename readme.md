@@ -28,19 +28,19 @@
 
 ***ROUTES:***
 - Registration (POST)
-	- http://localhost:4000/users/register
+	- https://cpstn2-ecommerceapi-robielos.onrender.com/users/register
     - request body: 
         - email (string)
         - password (string)
 
 - Authentication (POST)
-	- http://localhost:4000/users/login
+	- https://cpstn2-ecommerceapi-robielos.onrender.com/users/login
     - request body: 
         - email (string)
         - password (string)
 
 - Create Product (Admin only) (POST)
-	- http://localhost:4000/products
+	- https://cpstn2-ecommerceapi-robielos.onrender.com/products
     - request body: 
         - name (string)
         - description (string)
@@ -49,17 +49,17 @@
     	- bearer token required
 
 - Retrieve all products (GET)
-	- http://localhost:4000/products/all
+	- https://cpstn2-ecommerceapi-robielos.onrender.com/products/all
 
 - Retrieve all active products (GET)
 	- http://localhost:4000/products
 
 - Retrieve single product (GET)
-	- http://localhost:4000/products/(productId)
+	- https://cpstn2-ecommerceapi-robielos.onrender.com/products/(productId)
 	- NOTE: insert your productId to be routed accordingly.
 
 - Update Product information (Admin only) (PUT)
-	- http://localhost:4000/products/(productId)
+	- https://cpstn2-ecommerceapi-robielos.onrender.com/products/(productId)
 	- NOTE: insert your productId to be routed accordingly.
     - request body:
         - name (string)
@@ -69,26 +69,26 @@
     	- bearer token required
 
 - Archive Product (Admin only) (PUT)
-	- http://localhost:4000/products/(productId)/archive
+	- https://cpstn2-ecommerceapi-robielos.onrender.com/products/(productId)/archive
 	- NOTE: insert your productId to be routed accordingly.
     - authentication: 
     	- bearer token required
 
 - Activate Product (Admin only) (PUT)
-	- http://localhost:4000/products/(productId)
+	- https://cpstn2-ecommerceapi-robielos.onrender.com/products/(productId)
 	- NOTE: insert your productId to be routed accordingly.
     - authentication: 
     	- bearer token required
 
 - Non-admin User checkout (Create Order) (POST)
-	- http://localhost:4000/orders/checkout
+	- https://cpstn2-ecommerceapi-robielos.onrender.com/orders/checkout
     - request body:
     	- productId (string)
     - authentication: 
     	- bearer token required
 
 - Retrieve User Details (POST)
-	- http://localhost:4000/users/details
+	- https://cpstn2-ecommerceapi-robielos.onrender.com/users/details
     - authentication: 
     	- bearer token required
 
