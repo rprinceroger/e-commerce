@@ -24,12 +24,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:4000/users/register",
-							"protocol": "http",
+							"raw": "{{url}}/users/register",
 							"host": [
-								"localhost"
+								"{{url}}"
 							],
-							"port": "4000",
 							"path": [
 								"users",
 								"register"
@@ -53,12 +51,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:4000/users/login",
-							"protocol": "http",
+							"raw": "{{url}}/users/login",
 							"host": [
-								"localhost"
+								"{{url}}"
 							],
-							"port": "4000",
 							"path": [
 								"users",
 								"login"
@@ -82,12 +78,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:4000/users/login",
-							"protocol": "http",
+							"raw": "{{url}}/users/login",
 							"host": [
-								"localhost"
+								"{{url}}"
 							],
-							"port": "4000",
 							"path": [
 								"users",
 								"login"
@@ -113,7 +107,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"productId\":\"64df4c5d801d1c3b9099f702\"\r\n}",
+							"raw": "{\r\n    \"userId\": \"64df3f54801d1c3b9099f6f4\",\r\n    \"productId\": \"64df4c5d801d1c3b9099f702\",\r\n    \"quantity\": 5,\r\n    \"totalAmount\":200\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -121,12 +115,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:4000/orders/checkout",
-							"protocol": "http",
+							"raw": "{{url}}/orders/checkout",
 							"host": [
-								"localhost"
+								"{{url}}"
 							],
-							"port": "4000",
 							"path": [
 								"orders",
 								"checkout"
@@ -143,7 +135,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ZGYzZjM3ODAxZDFjM2I5MDk5ZjZmMiIsImVtYWlsIjoiYWRtaW5AbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2OTIzNTM4NDJ9.PSz6hpDwvqQ0xT9ex-hXWZaUjnERtqPB2TDahxodQMg",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ZGYzZjU0ODAxZDFjM2I5MDk5ZjZmNCIsImVtYWlsIjoidXNlckBtYWlsLmNvbSIsImlzQWRtaW4iOmZhbHNlLCJpYXQiOjE2OTI1NDY2MDh9.3j_2JGT9RGrnVuYsoiTVDyJcXZnB3ZA2y0uM1YDb0C0",
 									"type": "string"
 								}
 							]
@@ -151,15 +143,50 @@
 						"method": "POST",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:4000/users/details",
-							"protocol": "http",
+							"raw": "{{url}}/users/details",
 							"host": [
-								"localhost"
+								"{{url}}"
 							],
-							"port": "4000",
 							"path": [
 								"users",
 								"details"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT /set user as admin (admin)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ZGYzZjM3ODAxZDFjM2I5MDk5ZjZmMiIsImVtYWlsIjoiYWRtaW5AbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2OTI0MDEwOTd9.Ux6ravmfsb6z4Blm_6n484T87JKZo2SuDRRaRlgw1eI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\": \"64df3f54801d1c3b9099f6f4\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/users/updateAdmin",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"users",
+								"updateAdmin"
 							]
 						}
 					},
@@ -195,12 +222,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:4000/products",
-							"protocol": "http",
+							"raw": "{{url}}/products",
 							"host": [
-								"localhost"
+								"{{url}}"
 							],
-							"port": "4000",
 							"path": [
 								"products"
 							]
@@ -214,12 +239,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:4000/products/all",
-							"protocol": "http",
+							"raw": "{{url}}/products/all",
 							"host": [
-								"localhost"
+								"{{url}}"
 							],
-							"port": "4000",
 							"path": [
 								"products",
 								"all"
@@ -234,12 +257,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:4000/products",
-							"protocol": "http",
+							"raw": "{{url}}/products",
 							"host": [
-								"localhost"
+								"{{url}}"
 							],
-							"port": "4000",
 							"path": [
 								"products"
 							]
@@ -253,12 +274,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:4000/products/64df4c5d801d1c3b9099f702",
-							"protocol": "http",
+							"raw": "{{url}}/products/64df4c5d801d1c3b9099f702",
 							"host": [
-								"localhost"
+								"{{url}}"
 							],
-							"port": "4000",
 							"path": [
 								"products",
 								"64df4c5d801d1c3b9099f702"
@@ -292,12 +311,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:4000/products/64df4c5d801d1c3b9099f702",
-							"protocol": "http",
+							"raw": "{{url}}/products/64df4c5d801d1c3b9099f702",
 							"host": [
-								"localhost"
+								"{{url}}"
 							],
-							"port": "4000",
 							"path": [
 								"products",
 								"64df4c5d801d1c3b9099f702"
@@ -322,12 +339,10 @@
 						"method": "PUT",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:4000/products/64df4ab8801d1c3b9099f6fd/archive",
-							"protocol": "http",
+							"raw": "{{url}}/products/64df4ab8801d1c3b9099f6fd/archive",
 							"host": [
-								"localhost"
+								"{{url}}"
 							],
-							"port": "4000",
 							"path": [
 								"products",
 								"64df4ab8801d1c3b9099f6fd",
@@ -362,12 +377,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:4000/products/64df4c5d801d1c3b9099f702",
-							"protocol": "http",
+							"raw": "{{url}}/products/64df4c5d801d1c3b9099f702",
 							"host": [
-								"localhost"
+								"{{url}}"
 							],
-							"port": "4000",
 							"path": [
 								"products",
 								"64df4c5d801d1c3b9099f702"
