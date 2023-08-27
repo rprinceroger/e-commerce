@@ -1,5 +1,9 @@
 ## E-COMMERCE API DOCUMENTATION
 
+***USED POSTMAN / RESTMAN TO TEST THE API***
+- Here's the POSTMAN download link: https://www.postman.com/downloads/
+- Here's the RESTMAN download link: https://chrome.google.com/webstore/detail/restman/ihgpcfpkpmdcghlnaofdmjkoemnlijdi
+
 ***TEST ACCOUNTS:***
 - Regular User:
     - email: user@mail.com
