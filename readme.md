@@ -20,7 +20,8 @@ user123
 ```
   - Note: You might need to get a new bearer token after log-in.
 
-- Admin User:
+
+***Admin User:***
    - email:
 ```
 admin@mail.com
