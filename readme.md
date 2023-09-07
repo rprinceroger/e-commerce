@@ -1,8 +1,8 @@
 # E-COMMERCE API DOCUMENTATION
 
-***USED POSTMAN / RESTMAN TO TEST THE API***
+***USED `POSTMAN` / `RESTMAN` TO TEST THE API***
 - Here's the [POSTMAN](https://www.postman.com/downloads/) download link. 
-- Here's the RESTMAN download link: https://chrome.google.com/webstore/detail/restman/ihgpcfpkpmdcghlnaofdmjkoemnlijdi
+- Here's the [RESTMAN](https://chrome.google.com/webstore/detail/restman/ihgpcfpkpmdcghlnaofdmjkoemnlijdi) download link.
 
 ## TEST ACCOUNTS:
 ***Regular User:***
@@ -36,7 +36,7 @@ admin123
 ```
    - Note: You might need to get a new bearer token after log-in.
 
-***SAMPLE PRODUCTS***
+## SAMPLE PRODUCTS:
 - Zebra GK420d
    - productId:
 ```
@@ -51,7 +51,7 @@ admin123
 ```
    - isActive: true (Active)
 
-***ROUTES:***
+## ROUTES:
 - Registration (POST)
 ```
 https://cpstn2-ecommerceapi-robielos.onrender.com/users/register
@@ -61,33 +61,45 @@ https://cpstn2-ecommerceapi-robielos.onrender.com/users/register
   - password (string)
 
 - Authentication (POST)
-	- https://cpstn2-ecommerceapi-robielos.onrender.com/users/login
-    - request body: 
-        - email (string)
-        - password (string)
+```
+https://cpstn2-ecommerceapi-robielos.onrender.com/users/login
+```
+   - request body: 
+     - email (string)
+     - password (string)
 
 - Create Product (Admin only) (POST)
-	- https://cpstn2-ecommerceapi-robielos.onrender.com/products
-    - request body: 
-        - name (string)
-        - description (string)
-        - price (number)
-    - authentication: 
-    	- bearer token required
+```
+https://cpstn2-ecommerceapi-robielos.onrender.com/products
+```
+   - request body: 
+     - name (string)
+     - description (string)
+     - price (number)
+   - authentication: 
+     - bearer token required
 
 - Retrieve all products (GET)
-	- https://cpstn2-ecommerceapi-robielos.onrender.com/products/all
+```
+https://cpstn2-ecommerceapi-robielos.onrender.com/products/all
+```
 
 - Retrieve all active products (GET)
-	- http://localhost:4000/products
+```
+http://localhost:4000/products
+```
 
 - Retrieve single product (GET)
-	- https://cpstn2-ecommerceapi-robielos.onrender.com/products/(productId)
-	- NOTE: insert your productId to be routed accordingly.
+```
+https://cpstn2-ecommerceapi-robielos.onrender.com/products/(productId)
+```
+   - NOTE: insert your productId to be routed accordingly.
 
 - Update Product information (Admin only) (PUT)
-	- https://cpstn2-ecommerceapi-robielos.onrender.com/products/(productId)
-	- NOTE: insert your productId to be routed accordingly.
+```
+https://cpstn2-ecommerceapi-robielos.onrender.com/products/(productId)
+```
+   - NOTE: insert your productId to be routed accordingly.
     - request body:
         - name (string)
         - description (string)
@@ -96,26 +108,34 @@ https://cpstn2-ecommerceapi-robielos.onrender.com/users/register
     	- bearer token required
 
 - Archive Product (Admin only) (PUT)
-	- https://cpstn2-ecommerceapi-robielos.onrender.com/products/(productId)/archive
-	- NOTE: insert your productId to be routed accordingly.
+```
+https://cpstn2-ecommerceapi-robielos.onrender.com/products/(productId)/archive
+```
+   - NOTE: insert your productId to be routed accordingly.
     - authentication: 
     	- bearer token required
 
 - Activate Product (Admin only) (PUT)
-	- https://cpstn2-ecommerceapi-robielos.onrender.com/products/(productId)
-	- NOTE: insert your productId to be routed accordingly.
+```
+https://cpstn2-ecommerceapi-robielos.onrender.com/products/(productId)
+```
+   - NOTE: insert your productId to be routed accordingly.
     - authentication: 
     	- bearer token required
 
 - Non-admin User checkout (Create Order) (POST)
-	- https://cpstn2-ecommerceapi-robielos.onrender.com/orders/checkout
-    - request body:
-    	- productId (string)
-    - authentication: 
+```
+https://cpstn2-ecommerceapi-robielos.onrender.com/orders/checkout
+```
+   - request body:
+     - productId (string)
+     - authentication: 
     	- bearer token required
 
 - Retrieve User Details (POST)
-	- https://cpstn2-ecommerceapi-robielos.onrender.com/users/details
-    - authentication: 
-    	- bearer token required
+```
+https://cpstn2-ecommerceapi-robielos.onrender.com/users/details
+```
+   - authentication: 
+     - bearer token required
 
