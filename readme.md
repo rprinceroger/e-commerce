@@ -6,9 +6,18 @@
 
 ***TEST ACCOUNTS:***
 - Regular User:
-    - email: user@mail.com
-    - pwd: user123
-    - userId: 64df3f54801d1c3b9099f6f4
+    - email:
+```
+user@mail.com
+```
+    - pwd: 
+```
+user123
+```
+    - userId: 
+```
+64df3f54801d1c3b9099f6f4
+```
     - Note: You might need to get a new bearer token after log-in.
 
 - Admin User:
