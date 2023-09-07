@@ -1,7 +1,7 @@
-## E-COMMERCE API DOCUMENTATION
+# E-COMMERCE API DOCUMENTATION
 
 ***USED POSTMAN / RESTMAN TO TEST THE API***
-- Here's the POSTMAN download link: https://www.postman.com/downloads/
+- Here's the [POSTMAN](https://www.postman.com/downloads/) download link. 
 - Here's the RESTMAN download link: https://chrome.google.com/webstore/detail/restman/ihgpcfpkpmdcghlnaofdmjkoemnlijdi
 
 ***TEST ACCOUNTS:***
@@ -10,38 +10,54 @@
 ```
 user@mail.com
 ```
-   - pwd: 
+   - passwordd: 
 ```
 user123
 ```
-
-    - userId: 
+   - userId:
 ```
 64df3f54801d1c3b9099f6f4
 ```
-    - Note: You might need to get a new bearer token after log-in.
+  - Note: You might need to get a new bearer token after log-in.
 
 - Admin User:
-    - email: admin@mail.com
-    - pwd: admin123
-    - userId: 64df3f37801d1c3b9099f6f2
-	- Note: You might need to get a new bearer token after log-in.
+   - email:
+```
+admin@mail.com
+```
+   - password:
+```   
+admin123
+```
+   - userId:
+```
+64df3f37801d1c3b9099f6f2
+```
+   - Note: You might need to get a new bearer token after log-in.
 
 ***SAMPLE PRODUCTS***
 - Zebra GK420d
-	- productId: 64df4ab8801d1c3b9099f6fd
-    - isActive: false (Discontinued)
+   - productId:
+```
+64df4ab8801d1c3b9099f6fd
+```
+   - isActive: false (Discontinued)
      
 - Zebra ZD421
-	- productId: 64df4c5d801d1c3b9099f702
-    - isActive: true (Active)
+   - productId:
+```
+64df4c5d801d1c3b9099f702
+```
+   - isActive: true (Active)
 
 ***ROUTES:***
 - Registration (POST)
-	- https://cpstn2-ecommerceapi-robielos.onrender.com/users/register
-    - request body: 
-        - email (string)
-        - password (string)
+```
+https://cpstn2-ecommerceapi-robielos.onrender.com/users/register
+```
+- request body: 
+  - email (string)
+  - password (string)
 
 - Authentication (POST)
 	- https://cpstn2-ecommerceapi-robielos.onrender.com/users/login
