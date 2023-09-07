@@ -4,8 +4,8 @@
 - Here's the [POSTMAN](https://www.postman.com/downloads/) download link. 
 - Here's the RESTMAN download link: https://chrome.google.com/webstore/detail/restman/ihgpcfpkpmdcghlnaofdmjkoemnlijdi
 
-***TEST ACCOUNTS:***
-*Regular User:*
+## TEST ACCOUNTS:
+**Regular User:**
     - email:
 ```
 user@mail.com
