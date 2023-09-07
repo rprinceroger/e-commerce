@@ -5,7 +5,7 @@
 - Here's the RESTMAN download link: https://chrome.google.com/webstore/detail/restman/ihgpcfpkpmdcghlnaofdmjkoemnlijdi
 
 ***TEST ACCOUNTS:***
-- Regular User:
+*Regular User:*
     - email:
 ```
 user@mail.com
