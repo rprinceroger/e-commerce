@@ -1,33 +1,31 @@
-// Routes > User
-
-//[Modules and Dependencies]
 const express = require("express");
 const userController = require("../controllers/user");
 const auth = require("../auth");
 const { verify, verifyAdmin } = auth;
 
-//[Routing Component]
 const router = express.Router();
 
-//[Check email]
-router.post("/checkEmail",(req,res)=>{
-	userController.checkEmailExists(req.body).then(resultFromController=>res.send(resultFromController))
-});
+// Routes for handling user details
 
-//[Register a user]
-router.post("/register",(req,res)=>{
-	userController.registerUser(req.body).then(resultFromController=>res.send(resultFromController))
-});
+// Check if an email already exists
+router.post("/checkEmail", userController.checkEmail);
 
-//[User Authentication]
-router.post("/login",userController.loginUser);
+// User registration
+router.post("/register", userController.registerUser);
 
-//[Retrieve user details]
-router.post("/details", verify, userController.getProfile);
+// User login
+router.post("/login", userController.loginUser);
 
-//[Update user as admin]
-router.put('/updateAdmin', verify, verifyAdmin, userController.updateUserAsAdmin);
+// Get user profile
+router.post("/profile", verify, userController.getProfile);
 
+// Change a user to admin (Admin Only)
+router.put("/updateAdmin/:userId", verify, verifyAdmin, userController.updateUserAsAdmin);
 
-//[Export Route System]
+// Password reset
+router.post("/resetPassword", verify, userController.resetPassword);
+
+// Update user profile
+router.put("/updateProfile", verify, userController.updateProfile);
+
 module.exports = router;

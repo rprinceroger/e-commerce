@@ -1,25 +1,49 @@
-// Models > Order
-
 const mongoose = require("mongoose");
 
-const orderSchema = new mongoose.Schema({   
-	    userId : {
-	        type : String,
-	        required : [true, "User ID is required"]
-	    },
-	    products : [{
-	    	productId : {
-	    		type : String,
-	    		required : [true, "Product ID is required"]
-	    	},
-	    	quantity : Number
-	    }],
-	    totalAmount : Number,
-        purchaseDate : {
-            type : Date,
-            default : new Date()
-        }
+// Define the Order schema
+const orderSchema = new mongoose.Schema({
+  userId: {
+    type: String,
+    required: true,
+  },
+  firstName: {
+    type: String,
+    required: true,
+  },
+  lastName: {
+    type: String,
+    required: true,
+  },
+  products: [
+    {
+      productId: {
+        type: String,
+        required: true,
+      },
+      productName: {
+        type: String,
+        required: true,
+      },
+      quantity: {
+        type: Number,
+        required: true,
+      },
+    },
+  ],
+  totalAmount: {
+    type: Number,
+    required: true,
+  },
+  purchasedOn: {
+    type: Date,
+    default: new Date(),
+  },
+  status: {
+    type: String,
+    enum: ["pending", "processing", "packing", "in transit", "delivered"],
+    default: "pending",
+  },
 });
 
-// [Export Model]
-module.exports = mongoose.model("Order",orderSchema);
+// Create and export the Order model
+module.exports = mongoose.model("Order", orderSchema);

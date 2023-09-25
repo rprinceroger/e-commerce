@@ -1,27 +1,36 @@
-// Models > User
-
 const mongoose = require("mongoose");
 
-//[Schema/Blueprint]
+// Define the User schema
 const userSchema = new mongoose.Schema({
-	nickName : {
-        type : String,
-        required : [true, "How would you like us to address you?"]
-    },
-    email : {
-    type : String,
-    required : [true, "Email is required"]
-	},
-    password : {
-        type : String,
-        required : [true, "Password is required"]
-    },
-    isAdmin : {
-        type : Boolean,
-        default : false
-    },
-
+  firstName: {
+    type: String,
+    required: [true, "First name is required"],
+  },
+  lastName: {
+    type: String,
+    required: [true, "Last name is required"],
+  },
+  email: {
+    type: String,
+    required: [true, "Email is required"],
+  },
+  password: {
+    type: String,
+    required: [true, "Password is required"],
+  },
+  isAdmin: {
+    type: Boolean,
+    default: false,
+  },
+  mobileNo: {
+    type: String,
+    required: [true, "Mobile number is required"],
+  },
+  address: {
+    type: String,
+    required: [true, "Address is required"],
+  },
 });
 
-// [Export Model]
+// Create and export the User model
 module.exports = mongoose.model("User", userSchema);

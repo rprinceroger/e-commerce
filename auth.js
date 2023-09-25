@@ -1,50 +1,54 @@
-//For authentication
-
+// Import the 'jsonwebtoken' library and define the secret key
 const jwt = require("jsonwebtoken");
-const secret = "SolutionDesignAPI";
+const secret = "ECommerceAPI";
 
-module.exports.createAccessToken = (user)=>{
-	const data = {
-		id: user._id,
-		email:user.email,
-		isAdmin: user.isAdmin
-	};
-	return jwt.sign(data, secret, {});
+// Function to create an access token
+module.exports.createAccessToken = (user) => {
+  const data = {
+    id: user._id,
+    email: user.email,
+    isAdmin: user.isAdmin,
+  };
+  return jwt.sign(data, secret, {});
 };
 
-module.exports.verify = (req,res,next)=>{
-	console.log("This is from req.headers.authorization")
+// Middleware for verifying tokens
 
-	let token = req.headers.authorization;
+module.exports.verify = (req, res, next) => {
+  console.log(req.headers.authorization);
+  let token = req.headers.authorization;
 
-	if(typeof token === "undefined"){
-		return res.send({auth:"Failed. No Token"});
-	}else{
-		token = token.slice(7,token.length)
+  if (typeof token === "undefined") {
+    return res.send({ auth: "Authorization failed. No token" });
+  } else {
+    console.log(token);
+    token = token.slice(7, token.length);
+    console.log(token);
 
-		jwt.verify(token, secret, function(err,decodedToken){
+    jwt.verify(token, secret, function (err, decodedToken) {
+      if (err) {
+        return res.send({
+          auth: "Failed",
+          message: err.message,
+        });
+      } else {
+        console.log(decodedToken);
 
-			if(err){
-				return res.send({
-					auth: "Failed",
-					message: err.message
-				})
-			}else{
-				req.user = decodedToken
-				next()
-			}
-		})
-	};
+        req.user = decodedToken;
+        next();
+      }
+    });
+  }
 };
 
-
-module.exports.verifyAdmin = (req,res,next)=>{
-	if(req.user.isAdmin){
-		next()
-	}else{
-		return res.send({
-			auth:"Failed",
-			message:"Action Forbidden"
-		})
-	}
-}
+// Middleware for verifying admin privileges
+module.exports.verifyAdmin = (req, res, next) => {
+  if (req.user.isAdmin) {
+    next();
+  } else {
+    return res.send({
+      auth: "Failed",
+      message: "Action Forbidden",
+    });
+  }
+};
